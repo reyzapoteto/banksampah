@@ -1,6 +1,4 @@
 
-@section("views.dashboard")
-
 <!DOCTYPE html>
 
 <html
@@ -56,7 +54,7 @@
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
 
-      @included('views.layouts.sidebar')
+      @included('layouts.sidebar')
 
         <!-- Layout container -->
         <div class="layout-page">

@@ -71,7 +71,7 @@
             <!-- Apps -->
             <li class="menu-item">
               <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
+                href="layouts.dashboard"
                 target="_blank"
                 class="menu-link">
                 <i class="menu-icon tf-icons bx bx-envelope"></i>
@@ -81,29 +81,15 @@
             </li>
 
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Akademi</div>
+              <a href="layouts.form_horizontal" class="menu-link menu-toggle">
+                <i class="  "></i>
+                <div data-i18n="Form Elements">Produk</div>
               </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="forms-basic-inputs.html" class="menu-link">
+              <li class="menu-item">
+                  <a href="layouts.course" class="menu-link">
                     <div data-i18n="Basic Inputs">Modul Pembelajaran</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="forms-input-groups.html" class="menu-link">
-                    <div data-i18n="Input groups">Kuis Pembelajaran</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Produk</div>
-              </a>
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="forms-basic-inputs.html" class="menu-link">

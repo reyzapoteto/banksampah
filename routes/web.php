@@ -23,7 +23,7 @@ Route::get('/full', function () {
 
 
 Route::get('/sidebar', function () {
-    return view('sidebar');
+    return view('layouts/sidebar');
 });
 
 
