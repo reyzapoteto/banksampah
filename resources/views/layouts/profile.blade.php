@@ -73,17 +73,28 @@
 
                                     <hr class="my-0" />
                                     <div class="card-body">
-                                        <form id="formAccountSettings" method="POST" onsubmit="return false">
+
+
+                                        {{-- <form id="formAccountSettings" method="POST" onsubmit="return false"> --}}
+                                        <form action="{{ route('profileupdate', Auth::user()->id) }}" method="POST"
+                                            enctype="multipart/form-data" id="formAccountSettings">
+                                            @csrf
+                                            @method('POST')
+
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="firstName" class="form-label">Name</label>
-                                                    <input class="form-control" type="text" id="firstName"
-                                                        name="firstName" value=" {{ Auth::user()->name }}" autofocus />
+                                                    <label for="name" class="form-label">Name</label>
+                                                    <input class="form-control" type="text" id="name"
+                                                        name="name" value=" {{ Auth::user()->name }}" autofocus />
+
+                                                    <input class="form-control" type="hidden" id="id"
+                                                        name="id" value=" {{ Auth::user()->id }}" autofocus />
+
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="lastName" class="form-label">Email</label>
-                                                    <input class="form-control" type="text" name="lastName"
-                                                        id="lastName" value=" {{ Auth::user()->email }}" />
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input class="form-control" type="text" name="email"
+                                                        id="email" value=" {{ Auth::user()->email }}" />
                                                 </div>
                                             </div>
 
@@ -103,55 +114,9 @@
                                                 <div class="mb-3 col-md-6">
                                                     <label for="organization" class="form-label">Alamat Tempat
                                                         Tinggal</label>
-                                                    <input type="text" class="form-control" id="organization"
-                                                        name="organization" value="{{ Auth::user()->addresss }}" />
+                                                    <input type="text" class="form-control" id="address"
+                                                        name="address" value="{{ Auth::user()->address }}" />
                                                 </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="form-label" for="country">Country</label>
-                                                    <select id="country" class="select2 form-select">
-                                                        <option value="">Select</option>
-                                                        <option value="Australia">Australia</option>
-                                                        <option value="Bangladesh">Bangladesh</option>
-                                                        <option value="Belarus">Belarus</option>
-                                                        <option value="Brazil">Brazil</option>
-                                                        <option value="Canada">Canada</option>
-                                                        <option value="China">China</option>
-                                                        <option value="France">France</option>
-                                                        <option value="Germany">Germany</option>
-                                                        <option value="India">India</option>
-                                                        <option value="Indonesia">Indonesia</option>
-                                                        <option value="Israel">Israel</option>
-                                                        <option value="Italy">Italy</option>
-                                                        <option value="Japan">Japan</option>
-                                                        <option value="Korea">Korea, Republic of</option>
-                                                        <option value="Mexico">Mexico</option>
-                                                        <option value="Philippines">Philippines</option>
-                                                        <option value="Russia">Russian Federation</option>
-                                                        <option value="South Africa">South Africa</option>
-                                                        <option value="Thailand">Thailand</option>
-                                                        <option value="Turkey">Turkey</option>
-                                                        <option value="Ukraine">Ukraine</option>
-                                                        <option value="United Arab Emirates">United Arab Emirates
-                                                        </option>
-                                                        <option value="United Kingdom">United Kingdom</option>
-                                                        <option value="United States">United States</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="language" class="form-label">Language</label>
-                                                    <select id="language" class="select2 form-select">
-                                                        <option value="">Select Language</option>
-                                                        <option value="en">English</option>
-                                                        <option value="fr">French</option>
-                                                        <option value="de">German</option>
-                                                        <option value="pt">Portuguese</option>
-                                                    </select>
-                                                </div>
-
                                             </div>
 
                                     </div>

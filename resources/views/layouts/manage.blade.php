@@ -82,29 +82,32 @@
                                     </thead>
                                     <tbody class="table-border-bottom-0">
 
-                                        @foreach ($barang as $barang)
+                                        @foreach ($barang as $dataBarang)
                                             <tr>
                                                 {{-- gambar produk --}}
                                                 <td>
-                                                    <img src={{ $barang->gambar_barang }} alt="user-avatar"
-                                                        class="d-block rounded" height="100" width="100"
-                                                        id="uploadedAvatar" />
-                                                </td>
+                                                    <img src= "{{ url('storage/' . $dataBarang->gambar_barang) }}"
+                                                        alt="Image" class="d-block rounded" height="100"
+                                                        width="100" id="gambar_barang" />
 
+
+                                                </td>
                                                 {{-- nama produk --}}
-                                                <td>{{ $barang->nama_barang }}</td>
+                                                <td>{{ $dataBarang->nama_barang }}</td>
 
 
                                                 {{-- kategori produk --}}
                                                 <td><span
-                                                        class="badge bg-label-primary me-1">{{ $barang->kategori_barang }}</span>
+                                                        class="badge bg-label-primary me-1">{{ $dataBarang->kategori_barang }}</span>
                                                 </td>
 
                                                 {{-- Deksripsi  produk --}}
-                                                <td> {{ $barang->deskripsi_barang }} </td>
+                                                <td
+                                                    style="max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                    {{ $dataBarang->deskripsi_barang }} </td>
 
                                                 {{-- stok  produk --}}
-                                                <td> {{ $barang->stok_barang }} </td>
+                                                <td> {{ $dataBarang->stock_barang }} </td>
 
 
 
@@ -118,14 +121,16 @@
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item"
-                                                                href="{{ route('edit', $barang->id_barang) }}"><i
+                                                                href="{{ route('edit', ['barang' => $dataBarang->id]) }}"><i
                                                                     class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <form action= "{{ route('hapus', $barang->id_barang) }}"
+                                                            <form
+                                                                action= "{{ route('hapus', ['barang' => $dataBarang->id]) }}"
                                                                 method="post">
                                                                 @csrf
                                                                 @method('delete')
-                                                                <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="bx bx-trash me-1"></i> Delete</a>
+
+                                                                <button class="dropdown-item" type="submit"><i
+                                                                        class="bx bx-trash me-1"></i> Delete</button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -151,11 +156,6 @@
             <div class="layout-overlay layout-menu-toggle"></div>
         </div>
         <!-- / Layout wrapper -->
-
-        <div class="buy-now">
-            <a href="https://themeselection.com/item/sneat-bootstrap-html-admin-template/" target="_blank"
-                class="btn btn-danger btn-buy-now">Upgrade to Pro</a>
-        </div>
 
         <!-- Core JS -->
         <!-- build:js assets/vendor/js/core.js -->

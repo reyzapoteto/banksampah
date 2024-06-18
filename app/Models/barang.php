@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
+
 
 
 class barang extends Model
@@ -19,4 +21,6 @@ class barang extends Model
         'stock_barang',
         'gambar_barang',
       ];
+
+      public $timestamps = false;
 }

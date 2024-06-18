@@ -188,7 +188,7 @@
                         <h4 class="mb-2">Daftar Akun🚀</h4>
                         <p class="mb-4">Silahkan Daftar Akun anda disini!</p>
 
-                        <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
@@ -238,6 +238,7 @@
                                 </div>
                             </div>
                             <button class="btn btn-primary d-grid w-100">Mendaftar</button>
+
                         </form>
 
                         <p class="text-center">

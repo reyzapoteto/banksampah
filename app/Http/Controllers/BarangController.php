@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 use App\Models\barang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 class BarangController extends Controller
 {
   /**
@@ -12,6 +14,7 @@ class BarangController extends Controller
   public function ecommerce()
   {
     $barang = barang::all();
+
     return view('layouts.manage', compact('barang'));
   }
   /**
@@ -20,23 +23,31 @@ class BarangController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function simpan(Request $request)
   {
     $request->validate([
-      'title' => 'required|max:255',
-      'body' => 'required',
       'nama_barang' =>'required|max:255',
       'kategori_barang'=>'required|max:255',
       'deskripsi_barang'=>'required',
       'harga_barang' =>'required',
       'stock_barang'=>'required',
-      'gambar_barang'=>'required',
-
+      'gambar_barang'=>'required|image|max:2048',
     ]);
-    barang::create($request->all());
+
+    $gambar = $request->gambar_barang->store('barang','public');
+    $barang = barang::create([
+      'nama_barang' => $request->nama_barang,
+      'kategori_barang' => $request->kategori_barang,
+      'deskripsi_barang' => $request->deskripsi_barang,
+      'harga_barang' => $request->harga_barang,
+      'stock_barang' => $request->stock_barang,
+      'gambar_barang' => $gambar
+    ]);
+
     return redirect()->route('ecommerce')
       ->with('success', 'Post created successfully.');
   }
+
   /**
    * Update the specified resource in storage.
    *
@@ -44,23 +55,35 @@ class BarangController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
+  public function update(Request $request, barang $barang)
   {
+    // dd($request->all());
     $request->validate([
-        'title' => 'required|max:255',
-        'body' => 'required',
         'nama_barang' =>'required|max:255',
         'kategori_barang'=>'required|max:255',
         'deskripsi_barang'=>'required',
         'harga_barang' =>'required',
         'stock_barang'=>'required',
-        'gambar_barang'=>'required',
-
+        'gambar_barang'=>'sometimes|nullable|image|max:2048',
       ]);
-    $barang = barang::find($id);
-    $barang->update($request->all());
-    return redirect()->route('ecommerce')
-      ->with('success', 'Post updated successfully.');
+
+      $barang->update([
+        'nama_barang' => $request->nama_barang,
+        'kategori_barang' => $request->kategori_barang,
+        'deskripsi_barang' => $request->deskripsi_barang,
+        'harga_barang' => $request->harga_barang,
+        'stock_barang' => $request->stock_barang
+      ]);
+
+      if ($request->hasFile('gambar_barang')) {
+        $gambar = $request->gambar_barang->store('barang','public');
+        $barang->update([
+          'gambar_barang' => $gambar
+        ]);
+      }
+
+      return redirect()->route('ecommerce')
+        ->with('success', 'Post updated successfully.');
   }
   /**
    * Remove the specified resource from storage.
@@ -68,11 +91,11 @@ class BarangController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy($id)
+  public function hapus($id_barang)
   {
-    $barang = barang::find($id);
+    $barang = barang::find($id_barang);
     $barang->delete();
-    return redirect()->route('BarangController')
+    return redirect()->route('ecommerce')
       ->with('success', 'Post deleted successfully');
   }
   // routes functions
@@ -83,7 +106,7 @@ class BarangController extends Controller
    */
   public function tambah()
   {
-    return view('ecommerce.tambah');
+    return view('auth.ecommerce.tambah');
   }
   /**
    * Display the specified resource.
@@ -91,20 +114,20 @@ class BarangController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
-  {
-    $barang = barang::find($id);
-    return view('layouts.manage', compact('barang'));
-  }
+   public function tampilkan($id_barang)
+   {
+     $barang = barang::find($id_barang);
+     return view('tampilkan', compact('barang'));
+   }
   /**
    * Show the form for editing the specified post.
-   *
+   *des
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
   public function edit($id)
   {
     $barang = barang::find($id);
-    return view('ecommerce.edit', compact('barang'));
+    return view('auth.ecommerce.edit', compact('barang'));
   }
 }

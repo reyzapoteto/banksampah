@@ -1,7 +1,13 @@
+<?php
+// if ($errors->any()) {
+//     dd($errors->all());
+// }
+?>
+
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default"
-    data-assets-path="assets/" data-template="vertical-menu-template-free">
+    data-../../assets-path="../../assets/" data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
@@ -13,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,23 +28,23 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet" />
 
-    <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="assets/css/demo.css" />
+    <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="assets/vendor/js/helpers.js"></script>
+    <script src="../../assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="assets/js/config.js"></script>
+    <script src="../../assets/js/config.js"></script>
 </head>
 
 <body>
@@ -80,11 +86,22 @@
                                         <form action="{{ route('update', $barang->id) }}" method="POST">
                                             @csrf
                                             @method('PUT')
+
+                                            
+                                            <div class="card-body">
+                                                <div class="mb-3">
+                                                    <label for="gambar_barang" class="form-label">Gambar Barang</label>
+                                                    <input class="form-control" type="file" id="gambar_barang"
+                                                        name="gambar_barang" value="{{ $barang->gambar_barang }}" />
+                                                </div>
+                                            </div>
+
                                             <div class="row mb-3">
                                                 <label class="col-sm-2 col-form-label" for="nama_barang">Name</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="nama_barang"
-                                                        placeholder="John Doe" value="{{ $barang->nama_barang }}" />
+                                                        name="nama_barang" placeholder="John Doe"
+                                                        value="{{ $barang->nama_barang }}" />
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -92,7 +109,7 @@
                                                 </label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="deskripsi_barang"
-                                                        placeholder="deskripsi barang disini.",
+                                                        placeholder="deskripsi barang disini.", name="deskripsi_barang"
                                                         value="{{ $barang->deskripsi_barang }}" />
                                                 </div>
                                             </div>
@@ -103,19 +120,28 @@
                                                 </label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="harga_barang"
-                                                        placeholder="Harga barang kamu."
+                                                        placeholder="Harga barang kamu." name="harga_barang"
                                                         value="{{ $barang->harga_barang }}" />
                                                 </div>
                                             </div>
 
                                             <div class="mb-3 col-md-6">
                                                 <label for="kategori_produk" class="form-label">kategori</label>
-                                                <select id="kategori_produk" class="select2 form-select">
+                                                <select id="kategori_produk" class="select2 form-select"
+                                                    name="kategori_barang">
                                                     <option value="">Pilih kategori</option>
-                                                    <option value="bahan_basah">Produk Kering</option>
-                                                    <option value="bahan_kering">Produk Basah</option>
-                                                    <option value="bahan_plastik">Prpduk Plastik</option>
-                                                    <option value="bahan_non_plastik">Produk Non plastk</option>
+                                                    <option
+                                                        {{ $barang->kategori_barang == 'bahan_basah' ? 'selected' : '' }}
+                                                        value="bahan_basah">Produk Kering</option>
+                                                    <option
+                                                        {{ $barang->kategori_barang == 'bahan_kering' ? 'selected' : '' }}
+                                                        value="bahan_kering">Produk Basah</option>
+                                                    <option
+                                                        {{ $barang->kategori_barang == 'bahan_plastik' ? 'selected' : '' }}
+                                                        value="bahan_plastik">Prpduk Plastik</option>
+                                                    <option
+                                                        {{ $barang->kategori_barang == 'bahan_non_plastik' ? 'selected' : '' }}
+                                                        value="bahan_non_plastik">Produk Non plastk</option>
                                                 </select>
                                             </div>
 
@@ -125,7 +151,8 @@
                                                 </label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="stok_barang"
-                                                        placeholder="Stok Barang." value="{{ $barang->stok_barang }}" />
+                                                        name="stock_barang" placeholder="Stok Barang."
+                                                        value="{{ $barang->stock_barang }}" />
                                                 </div>
                                             </div>
 
@@ -134,6 +161,12 @@
                                                 <div class="row justify-content-end col-sm-10">
                                                     <div class="col-sm-10">
                                                         <button type="submit" class="btn btn-primary">Send</button>
+                                                    </div>
+
+                                                    <div class="mt-2 ms-4 mb-4">
+                                                        <button type="submit" class="btn btn-primary me-2">Save
+                                                            changes</button>
+                                                        <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -161,20 +194,20 @@
     <!-- / Layout wrapper -->
 
     <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
+    <!-- build:js ../../assets/vendor/js/core.js -->
 
-    <script src="assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="assets/vendor/libs/popper/popper.js"></script>
-    <script src="assets/vendor/js/bootstrap.js"></script>
-    <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="assets/vendor/js/menu.js"></script>
+    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../../assets/vendor/js/menu.js"></script>
 
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
 
     <!-- Page JS -->
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default"
-    data-../assets-path="../assets/" data-template="vertical-menu-template-free">
+    data-../../../assets-path="../../../assets/" data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../../../assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,23 +22,23 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet" />
 
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../../../assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="../../../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../../../assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../../../assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="../../../assets/js/config.js"></script>
 </head>
 
 <body>
@@ -74,63 +74,43 @@
                                 <div class="card mb-4">
 
                                     <div class="card-body">
-                                        <form action="{{ route('simpan') }}" method="POST"
+                                        <form action="{{ route('transaksiSimpan', $barang->id) }}" method="POST"
                                             enctype="multipart/form-data">>
                                             @csrf
+
                                             <div class="card-body">
                                                 <div class="mb-3">
-                                                    <label for="gambar_barang" class="form-label">Gambar Barang</label>
-                                                    <input class="form-control" type="file" id="gambar_barang"
-                                                        name="gambar_barang" />
+                                                    <label for="bukti" class="form-label">Bukti Transfer</label>
+                                                    <input class="form-control" type="file" id="bukti"
+                                                        name="bukti" />
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label class="col-sm-2 col-form-label" for="nama_barang">Name</label>
+                                                <label class="col-sm-2 col-form-label" for="quantity">Jumlah
+                                                    Pembelian</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="nama_barang"
-                                                        name="nama_barang" placeholder="John Doe" />
+                                                    <input type="text" class="form-control" id="quantity"
+                                                        name="quantity" placeholder="Jumlah Pembelian" />
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label class="col-sm-2 col-form-label" for="deskripsi_barang">Deskripsi
+                                                <label class="col-sm-2 col-form-label" for="note">Catatan
+                                                    Pembeli
                                                 </label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="deskripsi_barang"
-                                                        placeholder="deskripsi barang disini."
-                                                        name="deskripsi_barang" />
+                                                    <input type="text" class="form-control" id="note"
+                                                        placeholder="Catatan yang ingin disampaikan." name="note" />
                                                 </div>
                                             </div>
 
 
                                             <div class="row mb-3">
-                                                <label class="col-sm-2 col-form-label" for="harga_barang">harga Barang
+                                                <label class="col-sm-2 col-form-label" for="total">Total
+                                                    Pembayaran anda
                                                 </label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="harga_barang"
-                                                        placeholder="Harga barang kamu." name="harga_barang" />
-                                                </div>
-                                            </div>
-
-                                            <div class="row mb-3">
-                                                <label for="kategori_produk"
-                                                    class=" col-sm-2 form-label">kategori</label>
-                                                <select id="kategori_produk" class="select2 col-sm-10  form-select"
-                                                    name="kategori_barang">
-                                                    <option value="">Pilih kategori</option>
-                                                    <option value="bahan_basah">Produk Kering</option>
-                                                    <option value="bahan_kering">Produk Basah</option>
-                                                    <option value="bahan_plastik">Prpduk Plastik</option>
-                                                    <option value="bahan_non_plastik">Produk Non plastk</option>
-                                                </select>
-                                            </div>
-
-
-                                            <div class="row mb-3">
-                                                <label class="col-sm-2 col-form-label" for="stock_barang">Stok Barang
-                                                </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="stock_barang"
-                                                        placeholder="stock barang." name="stock_barang" />
+                                                    <input type="text" class="form-control" id="total"
+                                                        placeholder="Harga barang kamu." name="total" />
                                                 </div>
                                             </div>
 
@@ -138,7 +118,8 @@
                                             <div class = "col">
                                                 <div class="row justify-content-end col-sm-10">
                                                     <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-primary">Send</button>
+                                                        <button type="submit" class="btn btn-primary">Bayar
+                                                            Sekarang</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -166,20 +147,20 @@
     <!-- / Layout wrapper -->
 
     <!-- Core JS -->
-    <!-- build:js ../assets/vendor/js/core.js -->
+    <!-- build:js ../../../assets/vendor/js/core.js -->
 
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="../../../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../../../assets/vendor/js/menu.js"></script>
 
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <script src="../../../assets/js/main.js"></script>
 
     <!-- Page JS -->
 

@@ -94,6 +94,13 @@
         </li>
 
         <li class="menu-item">
+            <a href="{{ route('pesanan') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-category"></i>
+                <div data-i18n="Email">Pesanan Saya</div>
+            </a>
+        </li>
+
+        <li class="menu-item">
             <a href="{{ route('tambah') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-cart-add"></i>
                 <div data-i18n="Email">Tambah Barang</div>

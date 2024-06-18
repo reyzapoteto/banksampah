@@ -202,22 +202,24 @@
     </div>
     <div class="card-body">
       <div class="row gy-4 mb-4">
-        @foreach ($barang as $dataBarang)
+        @foreach ($transaksi as $transaksiBarang)
 <div class="col-sm-6 col-lg-4">
           <div class="card p-2 h-100 shadow-none border">
             <div class="rounded-2 text-center mb-3">
-              <a href="{{ route('transaksi', $dataBarang->id) }}"><img class="img-fluid" src= "{{ url('storage/' . $dataBarang->gambar_barang) }}" alt="tutor image 5" /></a>
+              <a href="{{ route('transaksi', $transaksiBarang->id) }}"><img class="img-fluid" src= "{{ url('storage/' . $transaksiBarang->barang->gambar_barang) }}" alt="tutor image 5" /></a>
             </div>
             <div class="card-body p-3 pt-2">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-label-warning">{{ $dataBarang->kategori_barang }}</span>
+                <span class="badge bg-label-warning">{{ $transaksiBarang->barang->kategori_barang }}</span>
                 <h6 class="d-flex align-items-center justify-content-center gap-1 mb-0">
-                    {{ $dataBarang->harga_barang }} <span class="text-warning"><i class="bx bxs-star me-1"></i></span><span class="text-muted"> {{ $dataBarang->stock_barang }}</span>
+                    {{ $transaksiBarang->total }} <span class="text-warning"><i class="bx bxs-star me-1"></i></span><span class="text-muted"> {{ $transaksiBarang->quantity }}</span>
                 </h6>
               </div>
-              <a class="h5" href="{{ route('transaksi', $dataBarang->id) }}">{{ $dataBarang->nama_barang }}</a>
-              <p class="mt-2">{{ $dataBarang->deskripsi_barang }}.</p>
-              <a class="w-100 btn btn-label-primary mt-4" href="{{ route('transaksi', $dataBarang->id) }}"><i class="bx bx-sync me-2"></i>Beli Sekarang</a>
+              <a class="h5" href="{{ route('transaksi', $transaksiBarang->id) }}">{{ $transaksiBarang->barang->nama_barang }}</a>
+              <p class="mt-2">{{ $transaksiBarang->barang->deskripsi_barang }}.</p>
+              <p class="mt-2">{{ $jumlahquantity }}.</p>
+
+              <a class="w-100 btn btn-label-success mt-4" href="{{ route('transaksi', $transaksiBarang->id) }}"><i class="bx bx-sync me-2"></i>Hubungi Penujual</a>
             </div>
           </div>
         </div>

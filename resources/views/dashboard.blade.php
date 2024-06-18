@@ -70,16 +70,14 @@
                                     <div class="d-flex align-items-end row">
                                         <div class="col-sm-7">
                                             <div class="card-body">
-                                                <h5 class="card-title text-primary">Congratulations
+                                                <h5 class="card-title text-primary">Selamat Datang
                                                     {{ Auth::user()->name }} 🎉</h5>
                                                 <p class="mb-4">
-                                                    You have done <span class="fw-medium">72%</span> more sales today.
-                                                    Check your new badge in
-                                                    your profile.
+                                                    Selamat Datang di Tempat Pembelajaran dan Pengelolaan Sampah dari <span class="fw-medium">Desa Tambak Rejo</span>
+                                                    silahkan jelajahi fitur yang ada pada aplikasi kami
                                                 </p>
 
-                                                <a href="javascript:;" class="btn btn-sm btn-outline-primary">View
-                                                    Badges</a>
+                                                <a href="javascript:;" class="btn btn-sm btn-outline-primary">Laporkan Bug</a>
                                             </div>
                                         </div>
                                         <div class="col-sm-5 text-center text-sm-left">
@@ -544,8 +542,8 @@
                                             </li>
                                             <li class="d-flex mb-4 pb-1">
                                                 <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="assets/img/icons/unicons/cc-success.png"
-                                                        alt="User" class="rounded" />
+                                                    <img src="assets/img/icons/unicons/cc-success.png" alt="User"
+                                                        class="rounded" />
                                                 </div>
                                                 <div
                                                     class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
@@ -578,8 +576,8 @@
                                             </li>
                                             <li class="d-flex">
                                                 <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="assets/img/icons/unicons/cc-warning.png"
-                                                        alt="User" class="rounded" />
+                                                    <img src="assets/img/icons/unicons/cc-warning.png" alt="User"
+                                                        class="rounded" />
                                                 </div>
                                                 <div
                                                     class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
@@ -613,12 +611,6 @@
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
-
-    <div class="buy-now">
-        <a href="https://themeselection.com/item/sneat-bootstrap-html-admin-template/" target="_blank"
-            class="btn btn-danger btn-buy-now">Upgrade to Pro</a>
-    </div>
-
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
