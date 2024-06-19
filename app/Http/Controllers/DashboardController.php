@@ -12,7 +12,6 @@ class DashboardController extends Controller
 {
     public function home(){
         $transaksi = Transaksi::all();
-
         $hargatotal = Transaksi::sum('total');
         $jumlahtotal = Transaksi::count();
         $hargaquantity = Transaksi::sum('quantity');

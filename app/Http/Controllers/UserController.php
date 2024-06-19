@@ -32,6 +32,7 @@ class UserController extends Controller
         'email' =>$request->email,
         'password'=>Hash::make($request->password),
         'address' =>$request->address ?? "",
+        'role' =>$request->role ??""
     ]);
 
     DB::commit();

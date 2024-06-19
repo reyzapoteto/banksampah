@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-wide customizer-hide" dir="ltr" data-theme="theme-default"
@@ -111,7 +110,7 @@
                         <h4 class="mb-2">Daftar Akun🚀</h4>
                         <p class="mb-4">Silahkan Daftar Akun anda disini!</p>
 
-                    <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
@@ -150,6 +149,17 @@
                                     placeholder="Masukan alamat anda" />
                             </div>
 
+                            <div class="mb-3">
+                                <label for="role" class=" form-label">Role</label>
+                                <div class="col-sm-12">
+
+                                    <select id="role" class="select2 form-select " name="role">
+                                        <option value="">Pilih role</option>
+                                        <option value="pengguna">Pengguna</option>
+                                        <option value="penjual">Penjual</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="mb-3">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="terms-conditions"

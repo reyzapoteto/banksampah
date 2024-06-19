@@ -5,6 +5,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EcommerceController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,11 +40,11 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout') ->nam
 
 Route::get('/login', function () {
     return view('auth.layouts.login');
-})-> name ('login');
+},"login")-> name ('login');
 
 
 Route::get('/register', function () {
-    return view('auth.layouts.register');
+    return view('.layouts.register');
 })-> name ('register');
 
 
@@ -50,7 +52,7 @@ Route::get('/register', function () {
 
 
 Route::get('/profile', function () {
-    $users = DB::table('users')->select('id','name','email','address')->get();
+    $users = DB::table('users')->select('id','name','email','address','role')->get();
     return view('layouts.profile',compact('users'));
 })-> name ('profile');
 
@@ -75,6 +77,17 @@ Route::get('/pesanan', [ EcommerceController::class ,'pesanan'])->name('pesanan'
 
 
 Route::get('/ecommerce', [ BarangController::class ,'ecommerce'])->name('ecommerce');
+
+Route::get('/ecommerce/Pengguna ', [ BarangController::class ,'ecommerce'])->name('ecommercePengguna');
+Route::get('/profile/Pengguna ', [ BarangController::class ,'ecommerce'])->name('ecommercePengguna');
+
+
+Route::get('/profile/pengguna', function () {
+    $users = DB::table('users')->select('id','name','email','address','role')->get();
+    return view('layouts.profile',compact('users'));
+})-> name ('profilePengguna');
+
+
 // returns the form for adding a post
 Route::get('/ecommerce/tambah',[ BarangController::class ,'tambah','upload'])->name('tambah');
 // adds a post to the database

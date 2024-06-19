@@ -44,10 +44,39 @@ class LoginController extends Controller
       }
 
 
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
 
         $this->middleware('auth')->only('logout');
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication was successful
+
+            // Get the authenticated user
+            $user = Auth::user();
+
+            // Check the user's role and redirect accordingly
+            if ($user->role === 'penjual') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role === 'pembeli') {
+                return redirect()->route('ecommercePengguna');
+            } else {
+                // Handle other roles or scenarios
+                // For example, redirect to a default dashboard
+                return redirect()->route('login');
+            }
+        }
+
+        // Authentication failed
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }
 }
