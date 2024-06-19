@@ -164,10 +164,7 @@
         </h3>
         <p class="mb-4">
 Kembangkan minat dan bakat anda dalam melakukan budidaya dan melakukan pengembangan sampah secara mudah dan nyaman untuk semua orang , raih penghasilan lebih dan turut serta dalam bersih lingkungan         </p>
-        <div class="d-flex align-items-center justify-content-between app-academy-md-80">
-          <input type="search" placeholder="Find your course" class="form-control me-2" />
-          <button type="submit" class="btn btn-primary btn-icon"><i class="bx bx-search"></i></button>
-        </div>
+
       </div>
       <div class="app-academy-md-25 d-flex align-items-end justify-content-end">
         <img src="assets/img/illustrations/girl-doing-yoga-light.png" alt="image" height="188" class="scaleX-n1-rtl" />
@@ -178,152 +175,92 @@ Kembangkan minat dan bakat anda dalam melakukan budidaya dan melakukan pengemban
   <div class="card mb-4">
     <div class="card-header d-flex flex-wrap justify-content-between gap-3">
       <div class="card-title mb-0 me-1">
-        <h5 class="mb-1">My Courses</h5>
-        <p class="text-muted mb-0">Total 6 course you have purchased</p>
-      </div>
-      <div class="d-flex justify-content-md-end align-items-center gap-3 flex-wrap">
-        <select id="select2_course_select" class="select2 form-select" data-placeholder="All Courses">
-          <option value="">All Courses</option>
-          <option value="all courses">All Courses</option>
-          <option value="ui/ux">UI/UX</option>
-          <option value="seo">SEO</option>
-          <option value="web">Web</option>
-          <option value="music">Music</option>
-          <option value="painting">Painting</option>
-        </select>
-
-        <label class="switch">
-          <input type="checkbox" class="switch-input">
-          <span class="switch-toggle-slider">
-            <span class="switch-on"></span>
-            <span class="switch-off"></span>
-          </span>
-          <span class="switch-label text-nowrap mb-0">Hide completed</span>
-        </label>
+        <h5 class="mb-1">Modul Pembelajaran</h5>
+        <p class="text-muted mb-0">Total Terdapat 4 Modul Pembelajaran</p>
       </div>
     </div>
     <div class="card-body">
       <div class="row gy-4 mb-4">
 
+
+
       <div class="col-sm-6 col-lg-4">
           <div class="card p-2 h-100 shadow-none border">
             <div class="rounded-2 text-center mb-3">
-              <a href="app-academy-course-details.html"><img class="img-fluid" src="assets/img/backgrounds/18.jpg" alt="tutor image 5" /></a>
+              <a href="app-academy-course-details.html"><img class="img-fluid" src="assets/img/backgrounds/modul1.png" alt="tutor image 5" /></a>
             </div>
             <div class="card-body p-3 pt-2">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-label-warning">Painting</span>
-                <h6 class="d-flex align-items-center justify-content-center gap-1 mb-0">
-                  4.7 <span class="text-warning"><i class="bx bxs-star me-1"></i></span><span class="text-muted"> (34)</span>
-                </h6>
+                <span class="badge bg-label-warning">PENGOLAHAN LIMBAH</span>
+
               </div>
-              <a class="h5" href="app-academy-course-details.html">Art & Drawing</a>
-              <p class="mt-2">Easy-to-follow video & guides show you how to draw animals, people & more.</p>
-              <a class="w-100 btn btn-label-primary mt-4" href="app-academy-course-details.html"><i class="bx bx-sync me-2"></i>Start Over</a>
+              <a class="h5" href="app-academy-course-details.html">Pengelolahan Limbah Pupuk</a>
+              <p class="mt-2">Nah kali ini kita akan berbagi cara membuat kompos dari sampah dapur di dalam botol plastik atau galon air mineral 15 L tanpa perlu menggunakan EM4, cukup pakai tanah
+                galonnya bisa merk macam-macam, tapi usahakan yang berwarna bening  kita buat bukaan dengan cara memotong tapi tidak sampai putus sehingga jadi seperti engsel
+                .</p>
+              <a class="w-100 btn btn-label-primary mt-4" href="http://www.youtube.com/embed/_hAv9wrPAvc" target=_blank><i class="bx bx-play me-2"></i>Tampilkan Modul</a>
             </div>
           </div>
         </div>
+
+
+        <div class="col-sm-6 col-lg-4">
+            <div class="card p-2 h-100 shadow-none border">
+              <div class="rounded-2 text-center mb-3">
+                <a href="app-academy-course-details.html"><img class="img-fluid" src="assets/img/backgrounds/modul2.png" alt="tutor image 5" /></a>
+              </div>
+              <div class="card-body p-3 pt-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge bg-label-warning">PENGOLAHAN LIMBAH</span>
+
+                </div>
+                <a class="h5" href="app-academy-course-details.html">Pengelolahan Kompos Gratis</a>
+                <p class="mt-2">Halo sobat organik kali ini mimin akan sedikit review cara membuat kompos dari sampah rumah tangga yang sangat mudah dan gratis tentunya. Dengan cara ini temen-temen bisa membuat pupuk kompos sendiri.</p>
+                <a class="w-100 btn btn-label-primary mt-4" href="http://www.youtube.com/embed/QDxOGRj5VMM" target=_blank><i class="bx bx-play me-2"></i>Tampilkan Modul</a>
+              </div>
+            </div>
+          </div>
 
 
 
         <div class="col-sm-6 col-lg-4">
-          <div class="card p-2 h-100 shadow-none border">
-            <div class="rounded-2 text-center mb-3">
-              <a href="app-academy-course-details.html"><img class="img-fluid" src="assets/img/pages/app-academy-tutor-5.png" alt="tutor image 5" /></a>
-            </div>
-            <div class="card-body p-3 pt-2">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-label-warning">Painting</span>
-                <h6 class="d-flex align-items-center justify-content-center gap-1 mb-0">
-                  4.7 <span class="text-warning"><i class="bx bxs-star me-1"></i></span><span class="text-muted"> (34)</span>
-                </h6>
+            <div class="card p-2 h-100 shadow-none border">
+              <div class="rounded-2 text-center mb-3">
+                <a href="app-academy-course-details.html"><img class="img-fluid" src="assets/img/backgrounds/modul3.png" alt="tutor image 5" /></a>
               </div>
-              <a class="h5" href="app-academy-course-details.html">Art & Drawing</a>
-              <p class="mt-2">Easy-to-follow video & guides show you how to draw animals, people & more.</p>
-              <p class="d-flex align-items-center text-success"><i class="bx bx-check-double me-2"></i>Completed</p>
-              <div class="progress mb-4" style="height: 8px">
-                <div class="progress-bar w-100" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="card-body p-3 pt-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge bg-label-warning">PENGOLAHAN PLASTIK</span>
+
+                </div>
+                <a class="h5" href="app-academy-course-details.html">Pot Tanaman terbuat dari Plastik Daur Ulang</a>
+                <p class="mt-2">Dalam video ini kami menunjukkan kepada Anda proses pembuatan pot tanaman plastik yang 100% didaur ulang. Setiap produk yang kami buat berawal dari tumpukan sampah plastik HDPE.</p>
+                <a class="w-100 btn btn-label-primary mt-4" href="http://www.youtube.com/embed/LM9nRUwOSdw" target=_blank><i class="bx bx-play me-2"></i>Tampilkan Modul</a>
               </div>
-              <a class="w-100 btn btn-label-primary" href="app-academy-course-details.html"><i class="bx bx-sync me-2"></i>Start Over</a>
             </div>
           </div>
-        </div>
-
-
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="card p-2 h-100 shadow-none border">
-            <div class="rounded-2 text-center mb-3">
-              <a href="app-academy-course-details.html"><img class="img-fluid" src="assets/img/pages/app-academy-tutor-5.png" alt="tutor image 5" /></a>
-            </div>
-            <div class="card-body p-3 pt-2">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-label-warning">Painting</span>
-                <h6 class="d-flex align-items-center justify-content-center gap-1 mb-0">
-                  4.7 <span class="text-warning"><i class="bx bxs-star me-1"></i></span><span class="text-muted"> (34)</span>
-                </h6>
-              </div>
-              <a class="h5" href="app-academy-course-details.html">Art & Drawing</a>
-              <p class="mt-2">Easy-to-follow video & guides show you how to draw animals, people & more.</p>
-              <p class="d-flex align-items-center text-success"><i class="bx bx-check-double me-2"></i>Completed</p>
-              <div class="progress mb-4" style="height: 8px">
-                <div class="progress-bar w-100" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <a class="w-100 btn btn-label-primary" href="app-academy-course-details.html"><i class="bx bx-sync me-2"></i>Start Over</a>
-            </div>
-          </div>
-        </div>
 
 
 
 
         <div class="col-sm-6 col-lg-4">
-          <div class="card p-2 h-100 shadow-none border">
-            <div class="rounded-2 text-center mb-3">
-              <a href="app-academy-course-details.html"><img class="img-fluid" src="assets/img/pages/app-academy-tutor-5.png" alt="tutor image 5" /></a>
-            </div>
-            <div class="card-body p-3 pt-2">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-label-warning">Painting</span>
-                <h6 class="d-flex align-items-center justify-content-center gap-1 mb-0">
-                  4.7 <span class="text-warning"><i class="bx bxs-star me-1"></i></span><span class="text-muted"> (34)</span>
-                </h6>
+            <div class="card p-2 h-100 shadow-none border">
+              <div class="rounded-2 text-center mb-3">
+                <a href="app-academy-course-details.html"><img class="img-fluid" src="assets/img/backgrounds/modul4.png" alt="tutor image 5" /></a>
               </div>
-              <a class="h5" href="app-academy-course-details.html">Art & Drawing</a>
-              <p class="mt-2">Easy-to-follow video & guides show you how to draw animals, people & more.</p>
-              <p class="d-flex align-items-center text-success"><i class="bx bx-check-double me-2"></i>Completed</p>
-              <div class="progress mb-4" style="height: 8px">
-                <div class="progress-bar w-100" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="card-body p-3 pt-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge bg-label-warning">PENGOLAHAN BOTOL</span>
+
+                </div>
+                <a class="h5" href="app-academy-course-details.html">Cara Membuat Celengan Dari Botol Bekas Yang Bikin Tetangga Nyinyir || Ide Kreatif</a>
+[                <p class="mt-2">Dalam video ini kami menunjukkan kepada Anda proses pembuatan pot tanaman plastik yang 100% didaur ulang. Setiap produk yang kami buat berawal dari tumpukan sampah plastik HDPE.</p>
+]                <a class="w-100 btn btn-label-primary mt-4" href="http://www.youtube.com/embed/JQocEeIuKxM" target=_blank><i class="bx bx-play me-2"></i>Tampilkan Modul</a>
               </div>
-              <a class="w-100 btn btn-label-primary" href="app-academy-course-details.html"><i class="bx bx-sync me-2"></i>Start Over</a>
             </div>
           </div>
-        </div>
 
 
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="card p-2 h-100 shadow-none border">
-            <div class="rounded-2 text-center mb-3">
-              <a href="app-academy-course-details.html"><img class="img-fluid" src="assets/img/pages/app-academy-tutor-5.png" alt="tutor image 5" /></a>
-            </div>
-            <div class="card-body p-3 pt-2">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="badge bg-label-warning">Painting</span>
-                <h6 class="d-flex align-items-center justify-content-center gap-1 mb-0">
-                  4.7 <span class="text-warning"><i class="bx bxs-star me-1"></i></span><span class="text-muted"> (34)</span>
-                </h6>
-              </div>
-              <a class="h5" href="app-academy-course-details.html">Art & Drawing</a>
-              <p class="mt-2">Easy-to-follow video & guides show you how to draw animals, people & more.</p>
-              <p class="d-flex align-items-center text-success"><i class="bx bx-check-double me-2"></i>Completed</p>
-              <div class="progress mb-4" style="height: 8px">
-                <div class="progress-bar w-100" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <a class="w-100 btn btn-label-primary" href="app-academy-course-details.html"><i class="bx bx-sync me-2"></i>Start Over</a>
-            </div>
-          </div>
-        </div>
 
 
           <div class="content-backdrop fade"></div>

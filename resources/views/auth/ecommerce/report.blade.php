@@ -4,20 +4,6 @@
     data-../../../assets-path="../../../assets/" data-template="vertical-menu-template-free">
 
 <head>
-
-    <script>
-        function multiplyByIdValue() {
-            // Get the value of the HTML element with the specified ID and convert it to an integer
-            let elementValue = parseInt(document.getElementById(quantity).value, 10);
-            // Perform the multiplication
-            let result = elementValue * $totalbarang;
-            alert('The result is: ' + result);
-            // Display the result in the HTML element with ID 'total'
-            document.getElementById(total).innerHTML = "Total Pembayaran: " + result;
-            return result;
-        }
-    </script>
-
     <meta charset="utf-8" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
@@ -79,7 +65,7 @@
                     <!-- Content -->
 
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Pesanan/</span>Pembayaran</h4>
+                        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Pengaduan</h4>
 
                         <!-- Basic Layout & Basic with Icons -->
                         <div class="row">
@@ -88,60 +74,43 @@
                                 <div class="card mb-4">
 
                                     <div class="card-body">
-                                        <form action="{{ route('transaksiSimpan', $barang->id) }}" method="POST"
+                                        <form action="{{ route('simpanReport') }}" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
+                                            <div class="row mb-3">
+                                                <label class="col-sm-2 col-form-label" for="judul">Judul
+                                                    Pengaduan</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="judul"
+                                                        name="judul" placeholder="Masukkan judul Pengaduan" />
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <label class="col-sm-2 col-form-label" for="pesan">Pesan
+                                                    Pengaduan</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="pesan"
+                                                        name="pesan" placeholder="Masukkan pesan Bug" />
+                                                </div>
+                                            </div>
 
                                             <div class="row mb-3">
                                                 <label for="bukti" class="col-sm-2 col-form-label">Bukti
-                                                    Transfer</label>
+                                                    Pengaduan</label>
                                                 <div class="col-sm-10">
 
                                                     <input class="form-control" type="file" id="bukti"
                                                         name="bukti" />
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <label class="col-sm-2 col-form-label" for="quantity">Jumlah
-                                                    Pembelian</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="quantity"
-                                                        name="quantity" placeholder="Jumlah Pembelian" />
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label class="col-sm-2 col-form-label" for="note">Catatan
-                                                    Pembeli
-                                                </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="note"
-                                                        placeholder="Catatan yang ingin disampaikan." name="note" />
-                                                </div>
-                                            </div>
 
-
-                                            <div class="row mb-3">
-                                                <label class="col-sm-2 col-form-label" for="total">Total
-                                                    Pembayaran anda
-                                                </label>
-                                                <div class="col-sm-10">
-
-                                                    <label class="form-label" for="total" id="total">
-                                                        {{-- name="total">{{ $totalbarang }} --}} </label>
-                                                </div>
-                                            </div>
-
-
-                                            <div class = "row mb-3">
+                                            <div class = "col">
                                                 <div class="row justify-content-end ">
-                                                    <button type="submit" class="btn btn-primary mt-4"
-                                                        onclick="multiplyByIdValue()">Kalkulasi
-                                                        Perhitungan</button>
-
-                                                    <button type="submit" class="btn btn-primary">Bayar
-                                                        Sekarang</button>
-
+                                                    <button type="submit" class="btn btn-primary">Kirim
+                                                        Pengaduan</button>
                                                 </div>
+                                            </div>
 
                                         </form>
                                     </div>
@@ -180,7 +149,6 @@
 
     <!-- Main JS -->
     <script src="../../../assets/js/main.js"></script>
-
 
     <!-- Page JS -->
 

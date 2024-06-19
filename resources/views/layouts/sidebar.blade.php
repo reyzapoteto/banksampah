@@ -45,7 +45,7 @@
                     </g>
                 </svg>
             </span>
-            <span class="app-brand-text demo menu-text fw-bold ms-2">Sneat</span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">Bank Sampah</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -95,7 +95,7 @@
 
         <li class="menu-item">
             <a href="{{ route('pesanan') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-category"></i>
+                <i class="menu-icon tf-icons bx bx-cart-alt"></i>
                 <div data-i18n="Email">Pesanan Saya</div>
             </a>
         </li>

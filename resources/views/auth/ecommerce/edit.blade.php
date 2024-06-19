@@ -71,26 +71,23 @@
                     <!-- Content -->
 
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Horizontal Layouts</h4>
+                        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Ecommmerce/</span> Edit Product</h4>
 
                         <!-- Basic Layout & Basic with Icons -->
                         <div class="row">
                             <!-- Basic Layout -->
                             <div class="col-xxl">
                                 <div class="card mb-4">
-                                    <div class="card-header d-flex align-items-center justify-content-between">
-                                        <h5 class="mb-0">Basic Layout</h5>
-                                        <small class="text-muted float-end">Default label</small>
-                                    </div>
                                     <div class="card-body">
                                         <form action="{{ route('update', $barang->id) }}" method="POST">
                                             @csrf
                                             @method('PUT')
 
-                                            
-                                            <div class="card-body">
-                                                <div class="mb-3">
-                                                    <label for="gambar_barang" class="form-label">Gambar Barang</label>
+                                            <div class="row mb-3">
+                                                <label for="gambar_barang" class="col-sm-2 col-form-label">Gambar
+                                                    Barang</label>
+                                                <div class="col-sm-10">
+
                                                     <input class="form-control" type="file" id="gambar_barang"
                                                         name="gambar_barang" value="{{ $barang->gambar_barang }}" />
                                                 </div>
@@ -125,24 +122,28 @@
                                                 </div>
                                             </div>
 
-                                            <div class="mb-3 col-md-6">
-                                                <label for="kategori_produk" class="form-label">kategori</label>
-                                                <select id="kategori_produk" class="select2 form-select"
-                                                    name="kategori_barang">
-                                                    <option value="">Pilih kategori</option>
-                                                    <option
-                                                        {{ $barang->kategori_barang == 'bahan_basah' ? 'selected' : '' }}
-                                                        value="bahan_basah">Produk Kering</option>
-                                                    <option
-                                                        {{ $barang->kategori_barang == 'bahan_kering' ? 'selected' : '' }}
-                                                        value="bahan_kering">Produk Basah</option>
-                                                    <option
-                                                        {{ $barang->kategori_barang == 'bahan_plastik' ? 'selected' : '' }}
-                                                        value="bahan_plastik">Prpduk Plastik</option>
-                                                    <option
-                                                        {{ $barang->kategori_barang == 'bahan_non_plastik' ? 'selected' : '' }}
-                                                        value="bahan_non_plastik">Produk Non plastk</option>
-                                                </select>
+                                            <div class="row mb-3">
+                                                <label for="kategori_produk"
+                                                    class="col-sm-2 col-form-label">kategori</label>
+                                                <div class="col-sm-10">
+
+                                                    <select id="kategori_produk" class="select2 form-select"
+                                                        name="kategori_barang">
+                                                        <option value="">Pilih kategori</option>
+                                                        <option
+                                                            {{ $barang->kategori_barang == 'bahan_basah' ? 'selected' : '' }}
+                                                            value="bahan_basah">Produk Kering</option>
+                                                        <option
+                                                            {{ $barang->kategori_barang == 'bahan_kering' ? 'selected' : '' }}
+                                                            value="bahan_kering">Produk Basah</option>
+                                                        <option
+                                                            {{ $barang->kategori_barang == 'bahan_plastik' ? 'selected' : '' }}
+                                                            value="bahan_plastik">Prpduk Plastik</option>
+                                                        <option
+                                                            {{ $barang->kategori_barang == 'bahan_non_plastik' ? 'selected' : '' }}
+                                                            value="bahan_non_plastik">Produk Non plastk</option>
+                                                    </select>
+                                                </div>
                                             </div>
 
 
@@ -158,38 +159,31 @@
 
 
                                             <div class = "col">
-                                                <div class="row justify-content-end col-sm-10">
-                                                    <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-primary">Send</button>
-                                                    </div>
-
-                                                    <div class="mt-2 ms-4 mb-4">
-                                                        <button type="submit" class="btn btn-primary me-2">Save
-                                                            changes</button>
-                                                        <button type="reset" class="btn btn-outline-secondary">Cancel</button>
-                                                    </div>
+                                                <div class="mt-2 mb-4">
+                                                    <button type="submit" class="btn btn-primary me-2">Edit Produk </button>
                                                 </div>
                                             </div>
-
-                                        </form>
                                     </div>
+
+                                    </form>
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
-                    <!-- / Content -->
-
-
-                    <div class="content-backdrop fade"></div>
                 </div>
-                <!-- Content wrapper -->
-            </div>
-            <!-- / Layout page -->
-        </div>
+                <!-- / Content -->
 
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
+
+                <div class="content-backdrop fade"></div>
+            </div>
+            <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
 

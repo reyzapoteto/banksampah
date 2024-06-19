@@ -3,6 +3,7 @@
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EcommerceController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +64,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Section Barang Ecommerce
+
+Route::get('/report/Ajukan', [ReportController::class ,'tambah'])->name('tambahReport');
+Route::post('/report/Simpan', [ReportController::class ,'simpan'])->name('simpanReport');
 
 Route::get('/ecommerce/{barang}/transaksi', [EcommerceController::class ,'transaksi'])->name('transaksi');
 Route::post('/ecommerce/{barang}/transaksi', [EcommerceController::class ,'transaksiSimpan'])->name('transaksiSimpan');

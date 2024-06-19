@@ -111,8 +111,6 @@
     <!-- Helpers -->
     <script src="assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-    <script src="assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="assets/js/config.js"></script>
 
@@ -145,7 +143,7 @@
 
 
 
-<h4 class="py-3 mb-4"><span class="text-muted fw-light">Academy/</span> My Courses</h4>
+<h4 class="py-3 mb-4"><span class="text-muted fw-light">Dashboard/</span> Ecommerce</h4>
 
 <div class="app-academy">
   <div class="card p-0 mb-4">
@@ -155,17 +153,13 @@
       </div>
       <div class="app-academy-md-50 card-body d-flex align-items-md-center flex-column text-md-center">
         <h3 class="card-title mb-4 lh-sm px-md-5 text-center">
-          Education, talents, and career opportunities.
-          <span class="text-primary fw-medium text-nowrap">All in one place</span>.
+          Pemasaran, Penjualan dan Pembelian.
+          <span class="text-primary fw-medium text-nowrap">Bank Sampah</span>.
         </h3>
         <p class="mb-4">
           Grow your skill with the most reliable online courses and certifications in marketing, information technology,
           programming, and data science.
         </p>
-        <div class="d-flex align-items-center justify-content-between app-academy-md-80">
-          <input type="search" placeholder="Find your course" class="form-control me-2" />
-          <button type="submit" class="btn btn-primary btn-icon"><i class="bx bx-search"></i></button>
-        </div>
       </div>
       <div class="app-academy-md-25 d-flex align-items-end justify-content-end">
         <img src="assets/img/illustrations/girl-doing-yoga-light.png" alt="image" height="188" class="scaleX-n1-rtl" />
@@ -176,28 +170,8 @@
   <div class="card mb-4">
     <div class="card-header d-flex flex-wrap justify-content-between gap-3">
       <div class="card-title mb-0 me-1">
-        <h5 class="mb-1">My Courses</h5>
-        <p class="text-muted mb-0">Total 6 course you have purchased</p>
-      </div>
-      <div class="d-flex justify-content-md-end align-items-center gap-3 flex-wrap">
-        <select id="select2_course_select" class="select2 form-select" data-placeholder="All Courses">
-          <option value="">All Courses</option>
-          <option value="all courses">All Courses</option>
-          <option value="ui/ux">UI/UX</option>
-          <option value="seo">SEO</option>
-          <option value="web">Web</option>
-          <option value="music">Music</option>
-          <option value="painting">Painting</option>
-        </select>
-
-        <label class="switch">
-          <input type="checkbox" class="switch-input">
-          <span class="switch-toggle-slider">
-            <span class="switch-on"></span>
-            <span class="switch-off"></span>
-          </span>
-          <span class="switch-label text-nowrap mb-0">Hide completed</span>
-        </label>
+        <h5 class="mb-1">Barang yang menarik</h5>
+        <p class="text-muted mb-0">Total terdapat <span>{{ $totalbarang }}</span> barang yang tersedia </p>
       </div>
     </div>
     <div class="card-body">
@@ -217,7 +191,7 @@
               </div>
               <a class="h5" href="{{ route('transaksi', $dataBarang->id) }}">{{ $dataBarang->nama_barang }}</a>
               <p class="mt-2">{{ $dataBarang->deskripsi_barang }}.</p>
-              <a class="w-100 btn btn-label-primary mt-4" href="{{ route('transaksi', $dataBarang->id) }}"><i class="bx bx-sync me-2"></i>Beli Sekarang</a>
+              <a class="w-100 btn btn-label-primary mt-4" href="{{ route('transaksi', $dataBarang->id) }}"><i class="bx bx-cart-alt me-2"></i>Beli Sekarang</a>
             </div>
           </div>
         </div>
@@ -246,11 +220,6 @@
 
   </div>
   <!-- / Layout wrapper -->
-
-
-  <div class="buy-now">
-    <a href="https://themeselection.com/item/sneat-dashboard-pro-bootstrap/" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
-  </div>
 
 
 

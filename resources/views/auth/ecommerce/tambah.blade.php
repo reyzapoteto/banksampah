@@ -65,7 +65,7 @@
                     <!-- Content -->
 
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Horizontal Layouts</h4>
+                        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Ecommerce/</span> Tambah Barang</h4>
 
                         <!-- Basic Layout & Basic with Icons -->
                         <div class="row">
@@ -75,11 +75,12 @@
 
                                     <div class="card-body">
                                         <form action="{{ route('simpan') }}" method="POST"
-                                            enctype="multipart/form-data">>
+                                            enctype="multipart/form-data">
                                             @csrf
-                                            <div class="card-body">
-                                                <div class="mb-3">
-                                                    <label for="gambar_barang" class="form-label">Gambar Barang</label>
+                                            <div class=" row mb-3">
+                                                <label for="gambar_barang" class="col-sm-2 col-form-label">Gambar
+                                                    Barang</label>
+                                                <div class="col-sm-10">
                                                     <input class="form-control" type="file" id="gambar_barang"
                                                         name="gambar_barang" />
                                                 </div>
@@ -113,15 +114,18 @@
 
                                             <div class="row mb-3">
                                                 <label for="kategori_produk"
-                                                    class=" col-sm-2 form-label">kategori</label>
-                                                <select id="kategori_produk" class="select2 col-sm-10  form-select"
-                                                    name="kategori_barang">
-                                                    <option value="">Pilih kategori</option>
-                                                    <option value="bahan_basah">Produk Kering</option>
-                                                    <option value="bahan_kering">Produk Basah</option>
-                                                    <option value="bahan_plastik">Prpduk Plastik</option>
-                                                    <option value="bahan_non_plastik">Produk Non plastk</option>
-                                                </select>
+                                                    class=" col-sm-2 col-form-label">kategori</label>
+                                                <div class="col-sm-10">
+
+                                                    <select id="kategori_produk" class="select2 col-sm-10  form-select"
+                                                        name="kategori_barang">
+                                                        <option value="">Pilih kategori</option>
+                                                        <option value="bahan_basah">Produk Kering</option>
+                                                        <option value="bahan_kering">Produk Basah</option>
+                                                        <option value="bahan_plastik">Produk Plastik</option>
+                                                        <option value="bahan_non_plastik">Produk Non plastk</option>
+                                                    </select>
+                                                </div>
                                             </div>
 
 
@@ -136,10 +140,9 @@
 
 
                                             <div class = "col">
-                                                <div class="row justify-content-end col-sm-10">
-                                                    <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-primary">Send</button>
-                                                    </div>
+                                                <div class="row justify-content-end col-sm-12">
+                                                    <button type="submit" class="btn btn-primary">Tambahkan
+                                                        Barang</button>
                                                 </div>
                                             </div>
 

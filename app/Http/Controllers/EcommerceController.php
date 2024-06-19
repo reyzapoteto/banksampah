@@ -12,8 +12,9 @@ class EcommerceController extends Controller
     public function index()
     {
       $barang = barang::all();
+      $totalbarang =barang::count();
 
-      return view('layouts.ecommerce', compact('barang'));
+      return view('layouts.ecommerce', compact('barang','totalbarang'));
     }
 
 
@@ -51,8 +52,9 @@ class EcommerceController extends Controller
     public function transaksi($id)
     {
       $barang = barang::find($id);
+      $totalbarang  = $barang->harga_barang;
 
-      return view('auth.ecommerce.transaksi', compact('barang'));
+      return view('auth.ecommerce.transaksi', compact('barang',"totalbarang"));
     }
 
 
