@@ -14,7 +14,9 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Horizontal Layouts - Forms | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Edit Produk</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/img/product/upnvjt.ico">
+
 
     <meta name="description" content="" />
 

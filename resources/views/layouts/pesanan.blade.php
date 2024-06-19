@@ -6,7 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Demo : My Courses - Academy | Sneat - Bootstrap Dashboard PRO</title>
+    <title>Pesanan Anda</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/product/upnvjt.ico">
+
 
 
     <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 Admin Dashboard built for developers!" />

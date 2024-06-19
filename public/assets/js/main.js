@@ -5,23 +5,52 @@
 "use strict";
 
 let menu, animate;
-let elementValue = parseInt(document.getElementById(quantity).value, 10);
 
 function multiplyByIdValue(id, multiplier) {
     // Get the value of the HTML element with the specified ID and convert it to an integer
     let elementValue = parseInt(document.getElementById(id).value, 10);
-    // Return the result of the multiplication
 
-    $result = elementValue * multiplier;
-    document.getElementById("total").innerHTML = "Total Pembayaran: " + result;
+    // Check if elementValue is a valid number
+    if (isNaN(elementValue)) {
+        alert("Please enter a valid number in the quantity field.");
+        return null;
+    }
 
-    return result;
+    // Perform the multiplication and return the result
+    return elementValue * multiplier;
 }
 
-function showResult() {
-    let result = multiplyByIdValue("quantity", 5);
-    alert("Total Pembayaran: " + result);
+function calculateAndDisplay(total) {
+    // Assume totalbarang is defined globally or fetched from the server
+
+    // Calculate the result
+    let result = multiplyByIdValue("quantity", total);
+
+    // Check if result is valid
+    if (result !== null) {
+        // Display the result in the HTML element with ID 'total'
+        document.getElementById("total").innerHTML =
+            "Total Pembayaran: " + result;
+
+        // Optionally save the result in local storage
+        saveResult(result);
+    }
 }
+
+function saveResult(result) {
+    localStorage.setItem("totalPembayaran", result);
+}
+
+function loadResult() {
+    let savedResult = localStorage.getItem("totalPembayaran");
+    if (savedResult !== null) {
+        document.getElementById("total").innerHTML =
+            "Rp. " + savedResult + ".00";
+    }
+}
+
+// Call loadResult when the page loads
+window.onload = loadResult;
 
 (function () {
     // Initialize menu

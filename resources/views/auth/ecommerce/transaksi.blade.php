@@ -5,29 +5,21 @@
 
 <head>
 
-    <script>
-        function multiplyByIdValue() {
-            // Get the value of the HTML element with the specified ID and convert it to an integer
-            let elementValue = parseInt(document.getElementById(quantity).value, 10);
-            // Perform the multiplication
-            let result = elementValue * $totalbarang;
-            alert('The result is: ' + result);
-            // Display the result in the HTML element with ID 'total'
-            document.getElementById(total).innerHTML = "Total Pembayaran: " + result;
-            return result;
-        }
-    </script>
 
     <meta charset="utf-8" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Horizontal Layouts - Forms | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Pembelian Produk</title>
+    <link rel="icon" type="image/x-icon" href="../../../assets/img/product/upnvjt.ico">
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../../../assets/img/favicon/favicon.ico" />
+
+    <script src="../../../assets/js/main.js"></script>
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,7 +50,7 @@
 <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container" style="padding-left: 250px">
+        <div class="layout-container">
 
             @include('layouts.sidebar')
 
@@ -126,8 +118,8 @@
                                                 </label>
                                                 <div class="col-sm-10">
 
-                                                    <label class="form-label" for="total" id="total">
-                                                        {{-- name="total">{{ $totalbarang }} --}} </label>
+                                                    <p class="form-label" for="total" id="total">
+                                                        {{-- name="total">{{ $totalbarang }} --}} </p>
                                                 </div>
                                             </div>
 
@@ -135,10 +127,11 @@
                                             <div class = "row mb-3">
                                                 <div class="row justify-content-end ">
                                                     <button type="submit" class="btn btn-primary mt-4"
-                                                        onclick="multiplyByIdValue()">Kalkulasi
+                                                        onclick="calculateAndDisplay({{ $totalbarang }})"
+                                                        value="10">Kalkulasi
                                                         Perhitungan</button>
 
-                                                    <button type="submit" class="btn btn-primary">Bayar
+                                                    <button type="submit" class="btn btn-primary mt-4">Bayar
                                                         Sekarang</button>
 
                                                 </div>
